@@ -11,7 +11,7 @@ public class ArrayPractice {
         }
 
         for (int i: someInts) {
-            if (i%2 == 0) {
+            if (i%2 != 0) {
                 System.out.println(i);
             }
         }

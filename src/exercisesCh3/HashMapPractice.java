@@ -38,6 +38,8 @@ public class HashMapPractice {
 //            sum += student.getValue();
         }
 
+        input.close();
+
     }
 }
 
