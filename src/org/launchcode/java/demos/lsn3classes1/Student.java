@@ -10,9 +10,6 @@ public class Student {
     private int numberOfCredits = 0;
     private double gpa = 0.0;
 
-    public String getName() {
-        return name;
-    }
     public int getStudentID() {
         return studentId;
     }
@@ -23,9 +20,6 @@ public class Student {
         return gpa;
     }
 
-    public void setName(String aName) {
-        name = aName;
-    }
     public void setStudentId(int aStudentId) {
         studentId = aStudentId;
     }
@@ -37,12 +31,29 @@ public class Student {
         gpa = aGpa;
     }
 
-
-    public Student(String name, int studentId, int numberOfCredits, double gpa) {
-        this.name = "Marina Nambiar";
-        this.studentId = 0;
-        this.numberOfCredits = 1;
-        this.gpa = 4.0;
+    public Student(String name, int studentID) {
+        this.name = name;
+        this.studentId = studentID;
     }
 
+    //overloaded constructor:
+    public Student(String name, int studentId, int numberOfCredits, double gpa) {
+        this(name, studentId);
+        this.numberOfCredits = numberOfCredits;
+        this.gpa = gpa;
+    }
+
+    //java figures out which constructor to use based on method signature (which one matches?) (return type, name, and parameters you give to constructor)
+//once you create a constructor the default constructor goes away
+    //then you HAVE to pass in constructor arguments
+    //DO NOT USE A= older syntax
+
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String name){
+        this.name = name;
+    }
 }
