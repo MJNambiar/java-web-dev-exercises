@@ -5,22 +5,31 @@ import org.junit.Test;
 
 import org.launchcode.java.demos.lsn5unittesting.main.Car;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 public class CarTest {
 
     //TODO: add emptyTest so we can configure our runtime environment (remove this test before pushing to your personal GitLab account)
 
-    Car test_car;
+    private Car test_car;
 
     @Before
     public void createCarObject() {
-        test_car = new Car("Toyota", "Prius", 10, 50);
+        test_car = new Car("Toyota", "Prius", 10, 50, 1965);
     }
 
     @Test
     public void emptyTest(){
         assertEquals(10,10,.001);
+    }
+
+    @Test
+    public void carFieldsSetCorrectly(){
+        assertEquals("Toyota", test_car.getMake());
+        assertEquals("Prius", test_car.getModel());
+        assertEquals(10, test_car.getGasTankLevel(), .01);
     }
 
     //TODO: constructor sets gasTankLevel properly
@@ -47,6 +56,11 @@ public class CarTest {
     public void testGasOverfillException(){
         test_car.addGas(5);
         fail("Shouldn't get here, car cannot have more gas in tank than the size of the tank");
+    }
+
+    @Test
+    public void canDetermineIfClassicCar(){
+        assertTrue(test_car.isClassic());
     }
 
 }

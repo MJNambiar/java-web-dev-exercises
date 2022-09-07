@@ -41,6 +41,17 @@ public class Menu {
         System.out.println(item.getPrice());
     }
 
+    //custom toString method
+    @Override
+    public String toString(){
+        String output = "";
+        for (MenuItem item: this.getMenuItems()) {
+            output += item.getName() + "-" + item.getDescription() + "-" + item.getPrice() + "\n";
+        }
+        output += "Last updated: " + this.lastUpdated;
+        return output;
+    }
+
     public void printMenu () {
         for (MenuItem item: this.menuItems) {
             System.out.println(item.getName());
@@ -51,8 +62,26 @@ public class Menu {
         }
     }
 
-    public void removeMenuItem (MenuItem item) {
-        this.menuItems.remove(item);
+    //DOES NOT WORK BY NAME
+//    public void removeMenuItem (MenuItem item) {
+//        this.menuItems.remove(item);
+//    }
+
+    public void removeMenuItem(String itemName){
+        MenuItem toBeRemoved = null;
+        for(MenuItem item: this.menuItems) {
+            if (item.getName().equalsIgnoreCase(itemName.toLowerCase())) {
+                toBeRemoved =item;
+
+            }
+        }
+        if(toBeRemoved != null) {
+            this.menuItems.remove(toBeRemoved);
+        }
     }
 
+
+
 }
+
+

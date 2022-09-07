@@ -45,6 +45,22 @@ public class MenuItem {
         }
     }
 
+    @Override
+    public boolean equals (Object toBeCompared) {
+        if (toBeCompared == this) {
+            return true;
+        }
+        if (toBeCompared == null) {
+            return false;
+        }
+        if (toBeCompared.getClass() != this.getClass()){
+            return false;
+        }
+        MenuItem item = (MenuItem) toBeCompared;
+        return this.name.equals(item.getName());
+    }
+    //custom toEquals method compare name
+
 
 }
 

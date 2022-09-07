@@ -1,5 +1,7 @@
 package org.launchcode.java.demos.lsn6inheritance;
 
+import Studio.restaurantMenu.MenuItem;
+
 public class Cat {
 
     private boolean tired = false;
@@ -12,6 +14,11 @@ public class Cat {
     public Cat (double aWeight) {
         weight = aWeight;
     }
+
+//    public Cat () {
+//        weight = 13;
+//    }
+
 
     /**** Getters and Setters ****/
 
@@ -65,4 +72,21 @@ public class Cat {
     public String noise () {
         return "Meeeeeeooooowww!";
     }
+
+//    @Override
+//    public boolean equals (Object toBeCompared) {
+//        if (toBeCompared == this) {
+//            return true;
+//        }
+//        if (toBeCompared == null) {
+//            return false;
+//        }
+//        if (toBeCompared.getClass() != this.getClass()){
+//            return false;
+//        }
+//        Cat typeCat = (Cat) toBeCompared;
+//        return this.weight.equals(typeCat.getWeight());
+//    }
+
 }
+

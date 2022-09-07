@@ -8,14 +8,16 @@ public class Car {
     private double gasTankLevel;
     private double milesPerGallon;
     private double odometer = 0;
+    private int modelYear;
 
-    public Car(String make, String model, int gasTankSize, double milesPerGallon) {
+    public Car(String make, String model, int gasTankSize, double milesPerGallon, int modelYear) {
         this.make = make;
         this.model = model;
         this.gasTankSize = gasTankSize;
         // Gas tank level defaults to a full tank
         this.gasTankLevel = gasTankSize;
         this.milesPerGallon = milesPerGallon;
+        this.modelYear = modelYear;
     }
 
     public String getMake() {
@@ -47,7 +49,7 @@ public class Car {
     }
 
     public void setGasTankLevel(double gasTankLevel) {
-        if(gasTankLevel > this.getGasTankLevel()){
+        if (gasTankLevel > this.getGasTankLevel()) {
             throw new IllegalArgumentException("Can't exceed tank size");
         }
         this.gasTankLevel = gasTankLevel;
@@ -72,8 +74,7 @@ public class Car {
      *
      * @param miles - the miles to drive
      */
-    public void drive(double miles)
-    {
+    public void drive(double miles) {
         //adjust fuel based on mpg and miles requested to drive
         double maxDistance = this.milesPerGallon * this.gasTankLevel;
         /**the double below uses some syntax called the ternary operator.
@@ -92,4 +93,7 @@ public class Car {
         this.setGasTankLevel(gas + this.getGasTankLevel());
     }
 
+    public boolean isClassic() {
+        return this.modelYear < 1970;
+    }
 }

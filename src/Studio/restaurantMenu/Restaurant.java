@@ -25,8 +25,10 @@ public class Restaurant {
         myMenu.printMenuItem(corndog);
         myMenu.printMenu();
 
-        myMenu.removeMenuItem(corndog);
+        myMenu.removeMenuItem("corndog");
         myMenu.printMenu();
+
+        System.out.println(myMenu);
     }
 
 }
