@@ -16,11 +16,16 @@ public class LaptopTest {
     }
 
     @Test
-    public void laptopFieldsSetCorrectly(){
+    public void testLaptopFieldsSetCorrectly(){
         assertEquals("personal laptop", test_laptop.getName());
         assertEquals(true, test_laptop.isAppleProduct());
         assertEquals(6000, test_laptop.getMemoryInGB(), .001);
         assertEquals("silver", test_laptop.getColor());
+    }
+
+    @Test
+    public void testPrintColorAccuracy(){
+        assertEquals("The laptop color is silver.", test_laptop.printColor("silver"));
     }
 
 }

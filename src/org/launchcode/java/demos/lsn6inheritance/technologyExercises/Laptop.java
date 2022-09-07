@@ -16,4 +16,9 @@ public class Laptop extends Computer {
     public String getColor() {
         return color;
     }
+
+    @Override
+    public String toString(){
+        return "Laptop ID: " + getId() + "\n" + "Laptop name: " + getName();
+    }
 }

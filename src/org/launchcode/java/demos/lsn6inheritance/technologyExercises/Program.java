@@ -13,5 +13,6 @@ public class Program {
         System.out.println(dell.increaseStorage(4000));
         System.out.println(dell.getId());
 
+        System.out.println(dell);
     }
 }

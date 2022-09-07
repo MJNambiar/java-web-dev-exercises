@@ -36,4 +36,8 @@ public class Computer extends AbstractEntity {
     public double getMemoryInGB() {
         return memoryInGB;
     }
+
+    public String toString() {
+        return "Computer ID: " + getId() + "\n" + "Computer name: " + this.name + "\n";
+    }
 }
