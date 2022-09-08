@@ -6,7 +6,6 @@ public class Computer extends AbstractEntity {
     private double memoryInGB;
 
     public Computer (String name, boolean isAppleProduct, double memoryInGB) {
-        super();
         this.name = name;
         this.isAppleProduct = isAppleProduct;
         this.memoryInGB = memoryInGB;
@@ -24,6 +23,11 @@ public class Computer extends AbstractEntity {
         memoryInGB += 100;
         return memoryInGB;
     }
+//or could do:
+    //public double increaseStorage(double memoryInGB){
+    //this.memoryInGB += memoryInGB;
+    //}
+
 
     public String getName() {
         return name;
